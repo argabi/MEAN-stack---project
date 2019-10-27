@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-default">
+    <div class="container">
+        <a class="navbar-brand nav_text" [routerLink]="['']">Bright Future</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary"
+            aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-primary">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand">
+                        <a href="index.html">
+                            <h4>Bright Future</h4>
+                        </a>
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse"
+                            data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/findjob']"><i class="material-icons">search</i>Display Jobs<span
+                            class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item" *ngIf="!is_login">
+                    <a class="nav-link" [routerLink]="['register']" ><i class="material-icons">person_outline</i>Register</a>
+                </li>
+                <li class="nav-item" *ngIf="!is_login">
+                    <a class="nav-link" [routerLink]="['login']" ><i class="material-icons">person</i>Login</a>
+                </li>
+                <li class="nav-item" *ngIf="!is_login">
+                    <a class="nav-link" [routerLink]="['admin']" ><i class="material-icons">supervisor_account</i>Admin</a>
+                </li>
+
+                <li class="nav-item dropdown" *ngIf="is_login">
+                    <a class="nav-link" href="#" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><i class="material-icons">badge</i>{{userData.first_name}} {{userData.last_name}}</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
+                        <a *ngIf="jobSeeker" class="dropdown-item" [routerLink]="['/editprofile']">View Profile</a>
+                        <a *ngIf="recruiter" class="dropdown-item" [routerLink]="['/edit_recruiter']">View Profile</a>
+                        <a *ngIf="recruiter" class="dropdown-item" [routerLink]="['/post_job']">Post Job</a>
+                        <a *ngIf="recruiter" class="dropdown-item" [routerLink]="['/ownjobs']">Display Posted Jobs</a>
+                        <a *ngIf="admin" class="dropdown-item" [routerLink]="['/admin']">Admin Dashboard</a>
+                        <a *ngIf="jobSeeker" class="dropdown-item" [routerLink]="['/displayjobs']">View jobs</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" (click)="sign_out()" >Sing out</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

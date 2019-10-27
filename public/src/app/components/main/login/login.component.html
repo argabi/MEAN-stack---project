@@ -1,0 +1,54 @@
+<section class="section section-lg section-hero section-shaped">
+    <!-- Background circles -->
+    <div class="shape shape-style-1 shape-primary">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+    </div>
+    <div class="container shape-container d-flex align-items-center py-lg">
+        <div class="col px-0">
+            <div class="row align-items-center justify-content-center">
+                <div class="col">
+
+                    <!--Login Tabs-->
+                    <div class="card bg-secondary shadow border-0">
+                        <div class="card-header bg-transparent pb-5">
+                            <div class="text-muted text-center mt-2 mb-3">
+                                <h4>Login as </h4>
+                            </div>
+                            <div class="btn-wrapper text-center">
+                                <input type="button" class="btn btn-info" value="User" (click)="change_to_user_login()">
+                                <input type="button" class="btn btn-success" value="Recruiter"
+                                    (click)="change_to_rec_login()">
+                            </div>
+                        </div>
+
+                        <div *ngIf="!login_type">
+                            <app-as-user></app-as-user>
+                        </div>
+
+                        <div *ngIf="login_type">
+                            <app-as-recruiter></app-as-recruiter>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
+        </svg>
+    </div>
+</section>

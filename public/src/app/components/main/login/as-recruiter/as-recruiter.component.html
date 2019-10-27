@@ -1,0 +1,33 @@
+<div class="card-body px-lg-5 py-lg-5">
+        <div class="alert alert-primary" role="alert" *ngIf="msg=='Recruiter has not been activated by an admin yet'">
+                
+                <span class="alert-inner--text"> <strong>{{msg}}</strong> </span>
+              </div>
+    <h6>Recruiter</h6>
+    <form role="form">
+        <div class="form-group mb-3">
+            <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <input class="form-control" placeholder="Email" name="email" type="email"
+                    [(ngModel)]="recruiterData.email">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                </div>
+                <input class="form-control" placeholder="Password" name="password" type="password"
+                    [(ngModel)]="recruiterData.password">
+            </div>
+        </div>
+        <div class="custom-control custom-control-alternative custom-checkbox">
+            <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+        </div>
+        <div class="text-center">
+            <button type="button" (click)="loginRecruiter()" class="btn btn-primary my-4">Sign in</button>
+        </div>
+    </form>
+</div>

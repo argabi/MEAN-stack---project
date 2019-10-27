@@ -1,0 +1,83 @@
+<div *ngIf="logged_in" class="container bootstrap snippet">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="main-box no-header clearfix">
+        <div class="main-box-body clearfix">
+          <div class="table-responsive mt-4" style="width: 100%; border: solid 5px #f4f5f7;">
+            <table class="table user-list">
+              <thead class="thead-dark">
+                <tr>
+                  <th class="text-center"><span>User</span></th>
+                  <th class="text-center"><span>Info</span></th>
+                  <th class="text-center"><span>Status</span></th>
+                  <th class="text-center"><span>Email</span></th>
+                  <th class="text-center"><span>Action</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let rec of recruiters;let i=index;">
+                  <td>
+                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                  </td>
+                  <td>
+                    <h6>{{rec.first_name}} {{rec.last_name}}</h6>
+                    <p>{{rec.companyName}}</p>
+                  </td>
+                  <td class="text-center">
+                    <h6 *ngIf="!rec.active">Inactive</h6>
+                    <h6 *ngIf="rec.active">Active</h6>
+                    <h1 *ngIf="!rec.active" class="material-icons" style="color: red;">error</h1>
+                    <h1 *ngIf="rec.active" class="material-icons" style="color: green;">verified_user</h1>
+                  </td>
+                  <td>
+                    <a>{{rec.email}}</a>
+                  </td>
+                  <td style="width: 20%;">
+                    <div class="custom-control custom-switch">
+                      <form >
+                        <input type="checkbox" class="custom-control-input" id="customSwitch{{i+1}}"
+                        name="active" [(ngModel)]="rec.active" (click)="updateRecStatus(rec)">
+                        <label *ngIf="rec.active" class="custom-control-label" for="customSwitch{{i+1}}" value="on">Deactivate</label>
+                        <label *ngIf="!rec.active" class="custom-control-label" for="customSwitch{{i+1}}" value="on">Activate</label>
+                      </form>
+
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!logged_in" class="card-body px-lg-5 py-lg-5">
+  <h6>Admin</h6>
+  <form role="form">
+    <div class="form-group mb-3">
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+        </div>
+        <input class="form-control" placeholder="Email" name="email" type="email" [(ngModel)]="admin_data.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+        </div>
+        <input class="form-control" placeholder="Password" name="password" type="password"
+          [(ngModel)]="admin_data.password">
+      </div>
+    </div>
+    <div class="custom-control custom-control-alternative custom-checkbox">
+      <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+    </div>
+    <div class="text-center">
+      <button type="button" (click)="login()" class="btn btn-primary my-4">Sign in</button>
+    </div>
+  </form>
+</div>

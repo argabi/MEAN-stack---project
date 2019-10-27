@@ -1,0 +1,8 @@
+.nav_text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.dropdown-item {
+  cursor: pointer !important;
+}

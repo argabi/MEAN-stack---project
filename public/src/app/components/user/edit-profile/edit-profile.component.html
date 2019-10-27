@@ -1,0 +1,169 @@
+<!-- <p>edit-profile works!</p> -->
+<div class="card-body px-lg-5 py-lg-5">
+  <h4>User Information</h4>
+  <form role="form">
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">First Name</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+        </div>
+        <input required="required" class="form-control" placeholder="First Name" name="first_name" type="text"
+          id="first name" [(ngModel)]="user.first_name">
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Last Name</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+        </div>
+        <input class="form-control" placeholder="Last Name" name="last_name" type="text" [(ngModel)]="user.last_name">
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Email</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+        </div>
+        <input class="form-control" placeholder="Email" name="email" type="email" [(ngModel)]="user.email">
+      </div>
+    </div>
+    <!-- <div class="form-group">
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Password" name="password" type="password" >
+                </div>
+            </div> -->
+
+    <h4>contact Information</h4>
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Phone</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">
+              phone
+            </i></span>
+        </div>
+        <input class="form-control" placeholder="Phone" name="phone" type="text" [(ngModel)]="user.phone">
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">City</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">
+              location_city
+            </i></span>
+        </div>
+        <input class="form-control" placeholder="City" name="city" type="text" [(ngModel)]="user.city">
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Gender</small>
+      <div class="input-group input-group-alternative">
+        <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
+          <!-- Radio buttons -->
+          <div class="mb-3">
+            <!-- <small class="text-uppercase font-weight-bold">Gender</small> -->
+          </div>
+          <div class="custom-control custom-radio mb-3">
+            <input name="gender" class="custom-control-input" id="male" type="radio" value="male"
+              [(ngModel)]="user.gender">
+            <label class="custom-control-label" for="male"><span>Male</span></label>
+          </div>
+          <div class="custom-control custom-radio mb-3">
+            <input name="gender" class="custom-control-input" id="female" type="radio" value="female"
+              [(ngModel)]="user.gender">
+            <label class="custom-control-label" for="female"><span>Female</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4>Education Information</h4>
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">University</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">
+              school
+            </i></span>
+        </div>
+        <input class="form-control" placeholder="University" name="university" type="text"
+          [(ngModel)]="user.university">
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Grade</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">
+              grade
+            </i></span>
+        </div>
+        <input class="form-control" placeholder="GPA" name="gpa" type="text" [(ngModel)]="user.gpa">
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Education</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">
+              menu_book
+            </i></span>
+        </div>
+        <input class="form-control" placeholder="Education" name="education" type="text" [(ngModel)]="user.education">
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Major</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">
+              storage
+            </i></span>
+        </div>
+        <input class="form-control" placeholder="Major" name="major" type="text" [(ngModel)]="user.major">
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Date of Birth</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">
+              storage
+            </i></span>
+        </div>
+        <input class="form-control" placeholder="Date of Birth" name="dateOfBirth" type="date"
+          [value]="user.dateOfBirth" [(ngModel)]="user.dateOfBirth">
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <small class="d-block text-uppercase font-weight-bold mb-3">Upload your CV</small>
+      <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">
+              storage
+            </i></span>
+        </div>
+        <label for="file">Choose File</label>
+        <input type="file" id="file" name="file" [(ngModel)]="fileToUpload" (change)="handleFileInput($event)">
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <div class="text-center">
+        <button type="button" class="btn btn-primary my-4" (click)='updateUser()'>Edit</button>
+      </div>
+    </div>
+  </form>
+</div>

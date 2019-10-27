@@ -1,0 +1,52 @@
+<!-- display jobs here -->
+<div class="card ml-4 mr-4 mb-4 mt-4" style="width: 95%; border: solid 1px #5e72e4; " *ngFor="let job of appliedJobs">
+
+  <div *ngIf="appliedJobs" class="card-body">
+    <!-- only show when appliedJobs is defined -->
+    <h5 class="card-title">{{job.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted"> Applied for it in {{job.createdAt | date : "fullDate"}}</h6>
+    <img src="https://picsum.photos/seed/picsum/150/150" alt="" class="img-fluid rounded shadow card-title">
+    <h6 class="card-subtitle mb-2 text-muted">{{job.company}}</h6>
+    <p class="card-text">{{ job.description }}</p>
+    <button type="button" (click)= "getModalInfo(job)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      View More information
+    </button>
+  </div>
+
+  <!-- end of display jobs -->
+
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{modal_info.title}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5>Job Description</h5>
+          <p>{{modal_info.description}}</p>
+          <h6>Company</h6>
+          <p>{{modal_info.company}}</p>
+          <h6>City</h6>
+          <p>{{modal_info.city}}</p>
+          <h6>Level</h6>
+          <p>{{modal_info.level}}</p>
+          <h6>Type</h6>
+          <p>{{modal_info.type}}</p>
+          <h6>Field</h6>
+          <p>{{modal_info.field}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

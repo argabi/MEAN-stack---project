@@ -1,0 +1,161 @@
+<!-- <p>post-job works!</p> -->
+
+<!-- <p>edit-profile works!</p> -->
+
+<div class="card-body px-lg-5 py-lg-5">
+
+  <h6>Post New job </h6>
+
+  <form role="form">
+
+    <div class="form-group mb-3">
+
+      <div class="input-group input-group-alternative">
+
+        <div class="input-group-prepend">
+
+          <span class="input-group-text"><i class="ni ni-badge"></i></span>
+
+        </div>
+
+        <input class="form-control" placeholder="Job title" name="title" type="text" [(ngModel)]="jobDetails.title">
+
+      </div>
+
+    </div>
+
+    <div class="form-group mb-3">
+
+      <div class="input-group input-group-alternative">
+
+        <div class="input-group-prepend">
+
+          <span class="input-group-text"><i class="ni ni-single-copy-04"></i></span>
+
+        </div>
+
+        <textarea class="form-control" name="description" placeholder="Job description" cols="30" rows="10"
+          [(ngModel)]="jobDetails.description"></textarea>
+
+        <!-- <input class="form-control" placeholder="Job description" name="description" type="text"  > -->
+
+      </div>
+
+    </div>
+
+    <div class="form-group mb-3">
+
+      <div class="input-group input-group-alternative">
+
+        <div class="input-group-prepend">
+
+          <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
+
+        </div>
+
+        <input class="form-control" placeholder="Level" name="level" type="text" [(ngModel)]="jobDetails.level">
+
+      </div>
+
+    </div>
+
+    <!-- <div class="form-group">
+
+                <div class="input-group input-group-alternative">
+
+                    <div class="input-group-prepend">
+
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+
+                    </div>
+
+                    <input class="form-control" placeholder="Password" name="password" type="password" >
+
+                </div>
+
+            </div> -->
+
+    ​
+
+    ​
+
+    <div class="form-group">
+
+      <div class="input-group input-group-alternative">
+
+        <div class="input-group-prepend">
+
+          <span class="input-group-text"><i class="ni ni-shop"></i></span>
+
+        </div>
+
+        <input class="form-control" placeholder="Field" name="field" type="text" [(ngModel)]="jobDetails.field">
+
+      </div>
+
+    </div>
+
+    ​
+
+    <div class="form-group">
+
+      <div class="input-group input-group-alternative">
+
+        <div class="input-group-prepend">
+
+          <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+
+        </div>
+
+        <input class="form-control" placeholder="City" name="city" type="text" [(ngModel)]="jobDetails.city">
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <div class="input-group input-group-alternative">
+
+        <div class="input-group-prepend">
+
+          <span class="input-group-text"><i class="ni ni-paper-diploma"></i></span>
+
+        </div>
+
+        <input class="form-control" placeholder="Contract type" name="type" type="text" [(ngModel)]="jobDetails.type">
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <div class="input-group input-group-alternative">
+
+        <div class="input-group-prepend">
+
+          <span class="input-group-text"><i class="ni ni-building"></i></span>
+
+        </div>
+
+        <input class="form-control" placeholder="Company" name="company" type="text" [(ngModel)]="jobDetails.company">
+
+      </div>
+
+    </div>
+
+    <div class="text-center">
+        <div class="alert alert-success" role="alert" *ngIf="msg==true">
+                
+            <span class="alert-inner--text"> <strong>Job successfully posted</strong> </span>
+          </div>
+
+          
+      <button type="button" class="btn btn-primary my-4" (click)='postJob()'>Post new job</button>
+
+    </div>
+
+  </form>
+
+</div>

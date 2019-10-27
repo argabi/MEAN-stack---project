@@ -1,0 +1,60 @@
+<div class="card-body px-lg-5 py-lg-5">
+    <h6>Recruiter</h6>
+        <form role="form">
+            <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="First Name" name="first_name" type="text" [(ngModel)]="registerRecruiterData.first_name">
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Last Name" name="last_name" type="text" [(ngModel)]="registerRecruiterData.last_name">
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Email" name="email" type="email" [(ngModel)]="registerRecruiterData.email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Password" name="password" type="password" [(ngModel)]="registerRecruiterData.password">
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-building"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Company Name" name="companyName" type="text" [(ngModel)]="registerRecruiterData.companyName">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-world-2"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Website" name="website" type="text" [(ngModel)]="registerRecruiterData.website">
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary my-4" (click)='registerRecruiter()'>Register</button>
+            </div>
+        </form>
+    </div>

@@ -1,0 +1,146 @@
+<div class="container" style="padding-bottom: 50px; padding-top: 100px;">
+  <div class="row">
+    <div class="col-sm">
+      <div class="form-group">
+        <label for="">Search</label>
+        <input type="text" class="form-control" placeholder="Job type" [(ngModel)]="searchText">
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm"><span class="badge badge-pill badge-primary" (click)="placeFun('Software Engineer')">Software
+        Engineer</span></div>
+    <div class="col-sm"><span class="badge badge-pill badge-primary"
+        (click)="placeFun('Human Resource Specialist')">Human Resource Specialist</span></div>
+    <div class="col-sm"><span class="badge badge-pill badge-primary" (click)="placeFun('Administration')">Administration
+      </span></div>
+    <div class="col-sm"><span class="badge badge-pill badge-primary"
+        (click)="placeFun('Finance and Investment')">Finance and Investment </span></div>
+    <div class="col-sm"><span class="badge badge-pill badge-primary" (click)="placeFun('Marketing and PR')">Marketing
+        and PR</span></div>
+    <div class="col-sm"><span class="badge badge-pill badge-primary" (click)="placeFun('Sales')">Sales </span></div>
+
+  </div>
+
+</div>
+
+
+
+<div class="container">
+  <!-- here gose the fillter -->
+
+  <div class="card" style="width: 100%; border: solid 5px #f4f5f7;">
+    <div class="card-body">
+      <form action="" class="form-group">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- Country -->
+            <label for="" class="form-group">City </label>
+            <select class="custom-select" name="city" [(ngModel)]="city">
+              <option value="" class="form-group"></option>
+              <option value="Riyadh" class="form-group">Riyadh</option>
+              <option value="Jeddah" class="form-group">Jeddah</option>
+              <option value="Abha" class="form-group">Abha</option>
+            </select>
+          </div>
+          <!--End of Col-->
+
+          <div class="col-md-3">
+            <!-- Country -->
+            <label for="" class="form-group">Level</label>
+            <select class="custom-select" [(ngModel)]="lvl" name="lvl">
+              <option value="" class="form-group"></option>
+              <option value="Entry" class="form-group">Entry Level</option>
+              <option value="Senior" class="form-group">Senior</option>
+            </select>
+          </div>
+          <!--End of Col-->
+
+          <div class="col-md-3">
+            <!-- Country -->
+            <label for="" class="form-group">Field </label>
+            <select class="custom-select" [(ngModel)]="field" name="field">
+              <option value="" class="form-group"></option>
+              <option value="Engineering" class="form-group">Engineering</option>
+              <option value="Sales" class="form-group">Sales</option>
+              <option value="Med" class="form-group">Medical,Healthcare</option>
+            </select>
+          </div>
+          <!--End of Col-->
+
+
+
+        </div> <!-- End of Row -->
+
+      </form>
+    </div>
+
+    <div class="card ml-4 mr-4 mb-4" style="width: 95%; border: solid 1px #5e72e4; "
+      *ngFor="let job of jobs  | filter:searchText |filter:City|filter:field|filter:lvl">
+      <div class="card-body" >
+        <h5 class="card-title">
+          {{job.title}}
+          <span *ngIf="job.applied" class="material-icons" style="color: green;">verified_user</span>
+        </h5>
+        <img src="https://picsum.photos/seed/picsum/150/150" alt="" class="img-fluid rounded shadow card-title">
+        <h6 class="card-subtitle mb-2 text-muted">
+          {{job.company}}
+        </h6>
+        <p class="card-text">{{ job.description }}</p>
+
+        <!-- Button trigger modal -->
+        <button type="button" (click)= "getModalInfo(job)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          View More information
+        </button>
+        <span *ngIf="!isRecruiter">
+          <a *ngIf="job.applied == undefined" class="btn btn-info" (click)="userApplied(job)">Apply</a>
+          <a *ngIf="job.applied" class="btn btn-success" (click)="userApplied(job)">Applied</a>
+          <a *ngIf="job.applied == false" class="btn btn-warning" (click)="userApplied(job)">You already applied for
+            this
+            job</a>
+        </span>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{modal_info.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" >
+                <h5>Job Description</h5>
+                <p>{{modal_info.description}}</p>
+                <h6>Company</h6>
+                <p>{{modal_info.company}}</p>
+                <h6>City</h6>
+                <p>{{modal_info.city}}</p>
+                <h6>Level</h6>
+                <p>{{modal_info.level}}</p>
+                <h6>Type</h6>
+                <p>{{modal_info.type}}</p>
+                <h6>Field</h6>
+                <p>{{modal_info.field}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                
+                <a *ngIf="job.applied" class="btn btn-success" (click)="userApplied(job)">Applied</a>
+                <a *ngIf="job.applied == false" class="btn btn-warning" (click)="userApplied(job)">You already applied
+                  for this job</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End of job-->
+
+
+  </div>
+</div>
